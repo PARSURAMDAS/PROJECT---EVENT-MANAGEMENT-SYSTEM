@@ -1,0 +1,96 @@
+{{message}}
+<form method="post" enctype="multipart/form-data">
+    eventname: <input type="text" name="eventname">
+    <br>
+    eventdesc:<input type="text" name="eventdesc">
+    <br>
+    eventprice:<input type="text" name="eventprice">
+    <br>
+    {% csrf_token %}
+    eventqty:<input type="text" name="eventqty" id="">
+    <br>
+    eventimage:<input type="file" name="eventimg" id="">
+    <br>
+    <input type="submit" name="" id="" value="register">
+</form>
+<table border="1px solid black" width=100 %>
+    <tr>
+        <th>eventname</th>
+        <th>eventdesc</th>
+        <th>eventqty</th>
+        <th>eventprice</th>
+        <th>eventimage</th>
+        <th>action</th>
+    </tr>
+    {% for data in product %}
+    <tr>
+        <td>{{data.eventname}}</td>
+        <td>{{data.eventdesc}}</td>
+        <td>{{data.eventprice}}</td>
+        <td>{{data.eventqty}}</td>
+        <td><img src="{{data.eventimage.url}}" alt="" height="100px" width="100px"></td>
+        <td><a href="/editevent/{{data.eventid}}"><button>Edit</button></a>
+            <a href="/deleteevent/{{data.eventid}}"><button>Delete</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #d3f7ba; /* Light grey background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form {
+    background-color: #f384a7; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+form input[type="text"],
+form input[type="file"] {
+    width: calc(100% - 20px); /* Adjust width to fit container with padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #0a0101; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+form input[type="submit"] {
+    width: calc(100% - 20px); /* Adjust width to fit container with padding */
+    padding: 10px;
+    background-color: #4CAF50; /* Green */
+    color: rgb(225, 177, 218);
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #b1ebb4; /* Darker green on hover */
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #921a38; /* Dark grey color */
+}
+
+form input[type="text"]:focus,
+form input[type="file"]:focus {
+    outline: none;
+    border-color: #faa5d0; /* Green */
+    box-shadow: 0px 0px 5px rgba(76, 175, 80, 0.5); /* Green shadow on focus */
+}
+
+</style>

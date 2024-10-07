@@ -1,0 +1,11 @@
+<form method="post">
+    {% csrf_token %}
+    <select name="orderstatus">
+        <option hidden>select status</option>
+        <option {% if orderstatus =='under process'%} selected {% endif %} value="under process">under process</option>
+        <option {% if orderstatus=='on the way' %} selected {% endif %} value="on the way">on the way</option>
+        <option {% if orderstatus=='delivered'%} selected{% endif %} value="delivered">delivered</option>
+    </select>
+    <br>
+    <button type="submit">change status </button>
+</form> 

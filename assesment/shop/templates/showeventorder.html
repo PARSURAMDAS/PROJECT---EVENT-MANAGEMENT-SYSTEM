@@ -1,0 +1,57 @@
+<table border="1px solid black" width="100%" style="text-align: center;">
+    <tr>
+        <th>ordereventid</th>
+        <th>username</th>
+        <th>ordereventdate</th>
+        <th>eventname</th>
+        <th>eventquantity</th>
+        <th>eventstatus</th>
+        <th>eventimage</th>
+    </tr>
+    {% for data in orders %}
+    <tr>
+        <td>{{data.ordereventid}}</td>
+        <td>{{data.userid.username}}</td>
+        <td>{{data.dateoforderevent}}</td>
+        <td>{{data.eid.productname}}</td>
+        <td>{{data.eventquantity}}</td>
+        <td><img src="{{data.eid.eventimage.url}}" alt="" height="100px" width="100px"></td>
+        <td>{{data.orderstatus}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<style>
+    body{
+        background-color: rgb(236, 225, 162);
+    }
+    
+    table {
+        
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #bfdd12;
+}
+
+tr:nth-child(even) {
+    background-color: #e486b2;
+}
+
+tr:hover {
+    background-color: #d0f0b2;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+</style>

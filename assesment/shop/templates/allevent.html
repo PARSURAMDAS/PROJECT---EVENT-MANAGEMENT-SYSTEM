@@ -1,0 +1,22 @@
+<table border="1px solid black" width="100%" style="text-align: center;">
+    <tr>
+        <th>ordereventid</th>
+        <th>username</th>
+        <th>ordereventdate</th>
+        <th>eventtname</th>
+        <th>eventQuantity</th>
+        <th>orderstatus</th>
+        <th>action</th>
+    </tr>
+    {% for data in orders %}
+    <tr>
+        <td>{{data.ordereventid}}</td>
+        <td>{{data.userid.username}}</td>
+        <td>{{data.eventid.productname}}</td>
+        <td>{{data.eventquantity}}</td>
+        <td>{{data.dateoforderevent}}</td>
+        <td>{{data.orderstatus}}</td>
+        <td><a href="/changestatus/{{data.ordereventid}}">changestatus</a></td>
+    </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,17 @@
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" name="eventid" value="{{eventid}}">
+    event name:<input type="text" name="eventname" value="{{eventname}}">
+    <br>
+    event desc:<input type="text" name="eventdesc" value="{{eventdesc}}">
+    <br>
+    event price:<input type="text" name="eventprice" value="{{eventprice}}">
+    <br>
+    {% csrf_token %}
+    event qty:<input type="text" name="eventqty" value="{{eventqty}}">
+    <br>
+    event image:<input type="file" name="eventimage" id="">
+    <br>
+    <img src="{{eventimage.url}}" alt="" height="100px" width="100px">
+    <br>
+    <input type="submit" name="" id=" " value="update">
+</form>

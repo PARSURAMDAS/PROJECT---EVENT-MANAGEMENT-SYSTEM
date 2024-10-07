@@ -1,0 +1,57 @@
+<table border="1px solid black" width="100%">
+    <tr>
+        <th>eventname</th>
+        <th>eventdesc</th>
+        <th>eventqty</th>
+        <th>eventprice</th>
+        <th>eventimage</th>
+        <th>action</th>
+    </tr>
+    {% for data in event %}
+    <tr>
+        <td>{{data.eventname}}</td>
+        <td>{{data.eventdesc}}</td>
+        <td>{{data.eventqty}}</td>
+        <td>{{data.eventprice}}</td>
+        <td><img src="{{data.eventimage.url}}" alt="" height="100px" width="100px"></td>
+        <td><a href="{% url 'orderevent' data.eventid %}"><button>order now </button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+<style>
+    /* Style for the table */
+body{
+    background-color: rgb(231, 244, 183);
+}    
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #510202; /* Light grey border */
+}
+
+/* Style for table headers */
+th {
+    background-color: #adda08; /* Light grey background */
+    border: 1px solid #2196c9; /* Light grey border */
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style for table data */
+td {
+    border: 1px solid #e7e36c; /* Light grey border */
+    padding: 8px;
+}
+
+/* Style for alternate rows */
+tr:nth-child(even) {
+    background-color: #d8b4ce; /* Light grey background for even rows */
+}
+
+/* Style for images within table cells */
+td img {
+    display: block;
+    margin: 0 auto;
+}
+
+</style>

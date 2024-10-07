@@ -1,0 +1,13 @@
+<form method="post">
+    <input type="hidden" name="userid" value="{{request.session.userid}}">
+    <input type="hidden" name="eid" value="{{event.eid}}">
+    <select name="eventqty" id="">
+        <option hidden>Select Quantity</option>
+        {% for data in quantity_range %}
+        <option value="{{data}}">{{data}}</option>
+        {% endfor %}
+        {% csrf_token %}
+    </select>
+    <button type="submit"> place order</button>
+
+</form>

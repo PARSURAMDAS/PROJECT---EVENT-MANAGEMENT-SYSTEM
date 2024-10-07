@@ -1,0 +1,89 @@
+<h1>Welcome to user page</h1>
+<form method="post">
+    <h3> login page </h3>
+    <input type="text" name="username" id="" placeholder="enter email" required>
+    <br><br>
+    <input type="password" name="password" id="" placeholder="enter password" required>
+    <br><br>
+    <input type="submit" name="" value="login">
+    <div class="forgot_password">
+        <a href="/resetpassword">forgot password</a>
+    </div>
+    {% csrf_token %}
+</form>
+    <p> <a href="/userreg"> register here</a></p>
+    <p> <a href="#"> click here to reset</a></p>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f9d4a2; /* Light grey background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333; /* Dark grey color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Text shadow for depth */
+    padding: 20px 0;
+}
+
+h3 {
+    text-align: center;
+    color: #064e52; /* Medium grey color */
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #9ef1c2; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: calc(100% - 20px); /* Adjust width to fit container with padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #f5d2d2; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+form input[type="submit"] {
+    width: calc(100% - 20px); /* Adjust width to fit container with padding */
+    padding: 10px;
+    background-color: #e596b4; /* Green */
+    color: rgb(42, 4, 4);
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+form p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+form a {
+    color: #4CAF50; /* Green */
+    text-decoration: none;
+}
+
+form a:hover {
+    color: #ddb1d8; /* Darker green on hover */
+}
+
+</style>

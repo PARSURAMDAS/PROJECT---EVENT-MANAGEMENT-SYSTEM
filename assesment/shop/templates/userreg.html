@@ -1,0 +1,86 @@
+<form method="post" >
+    <h1> Register here</h1>
+    <input type=" text" name="name" id="" placeholder="name" required>
+    <br>
+    <input type="text" name="address" id="" placeholder="address" required>
+    <br>
+    <input type="email" name="email" id="" placeholder="email" required>
+    <br>
+    <input type="phone" name="phone" id="" placeholder="phone" required>
+    <br>
+    <input type="password" name="password" id="" placeholder="password" required>
+    <br>
+    <input type="submit" name="submit" id="" value="register">
+    {% csrf_token %}
+</form>
+    <p> <a href="/userlog">login here</a></p>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #e2f59e; /* Light grey background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333; /* Dark grey color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Text shadow for depth */
+    padding: 20px 0;
+}
+
+form {
+    background-color: #e5c860; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="phone"] {
+    width: calc(100% - 20px); /* Adjust width to fit container with padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #a9cbea; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+form input[type="submit"] {
+    width: calc(100% - 20px); /* Adjust width to fit container with padding */
+    padding: 10px;
+    background-color: #e6c5eb; /* Green */
+    color: rgb(3, 42, 43);
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #a3515f; /* Darker green on hover */
+}
+
+form p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+form a {
+    color: #7d4041; /* Green */
+    text-decoration: none;
+}
+
+form a:hover {
+    color: #a2a1b4; /* Darker green on hover */
+}
+
+</style>
